@@ -227,3 +227,72 @@ footer {
         padding: 40px 20px;
     }
 }
+
+
+/* ---- BOTÃO FLUTUANTE DO WHATSAPP ---- */
+
+.whatsapp-float {
+    position: fixed;
+    /* Esta é a regra chave! Faz o elemento "flutuar" */
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    /* Distância da parte de baixo */
+    right: 20px;
+    /* Distância da parte da direita */
+    background-color: #25D366;
+    /* Cor oficial do WhatsApp */
+    color: #FFF;
+    /* Cor do ícone (branco) */
+    border-radius: 50%;
+    /* Deixa o botão redondo */
+    text-align: center;
+    font-size: 30px;
+    /* Tamanho do ícone */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para dar profundidade */
+    z-index: 1000;
+    /* Garante que ele fique na frente de tudo */
+    /* Centraliza o ícone perfeitamente dentro do círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Animação suave */
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+}
+
+
+/* Efeito ao passar o mouse por cima */
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    /* Aumenta um pouco o tamanho */
+}
+
+
+/* ---- ESTILOS PARA O MAPA INCORPORADO ---- */
+
+.map-container {
+    margin-top: 40px;
+    /* Adiciona um espaço acima do mapa */
+    border-radius: 8px;
+    /* Bordas arredondadas para um visual mais suave */
+    overflow: hidden;
+    /* Garante que o mapa fique dentro das bordas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+
+/* Regra para deixar o iframe do mapa responsivo */
+
+.map-container iframe {
+    width: 100%;
+    /* O mapa sempre ocupará 100% da largura do container */
+    height: 400px;
+    /* Define uma altura fixa para o mapa */
+    border: none;
+    /* Remove a borda padrão do iframe */
+}
