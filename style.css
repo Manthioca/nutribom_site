@@ -1,0 +1,257 @@
+/* ---- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS ---- */
+
+
+/* Variáveis de cores e fontes ATUALIZADAS com a identidade da NUTRIBOM */
+
+:root {
+    --cor-primaria: #0D6A35;
+    /* Verde escuro do logo */
+    --cor-secundaria: #FDB813;
+    /* Amarelo/dourado do logo */
+    --cor-fundo: #F8F9FA;
+    --cor-texto: #333;
+    --cor-branco: #FFFFFF;
+    --fonte-titulo: 'Nunito', sans-serif;
+    /* Fonte arredondada e forte */
+    --fonte-slogan: 'Pacifico', cursive;
+    /* Fonte script para o slogan */
+    --fonte-corpo: 'Nunito', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* ---- CABEÇALHO (HEADER) ---- */
+
+header {
+    background-color: var(--cor-branco);
+    padding: 0.5rem 0;
+    /* Diminuí um pouco a altura */
+    border-bottom: 3px solid var(--cor-secundaria);
+    /* Borda com a cor secundária */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Estilo para a imagem do logo */
+
+.logo-img {
+    max-height: 150px;
+    /* Ajuste a altura do seu logo aqui */
+    width: auto;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--cor-primaria);
+}
+
+
+/* ---- SEÇÕES PRINCIPAIS ---- */
+
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+h2 {
+    font-family: var(--fonte-titulo);
+    font-weight: 800;
+    /* Mais peso para os títulos */
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    color: var(--cor-primaria);
+}
+
+
+/* ---- SEÇÃO HERO (PRINCIPAL) ---- */
+
+#hero {
+    background-color: #f7f3e5;
+    /* Um fundo creme que combina com o amarelo */
+}
+
+
+/* Estilo especial para o slogan */
+
+#hero .slogan {
+    font-family: var(--fonte-slogan);
+    font-size: 3.8rem;
+    font-weight: 400;
+    /* Fontes script não precisam de negrito */
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+
+/* ---- BOTÕES (Call to Action) ---- */
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    /* Botão principal com a cor secundária */
+    color: var(--cor-texto);
+    /* Texto escuro para contraste no amarelo */
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 800;
+    font-family: var(--fonte-titulo);
+    transition: all 0.3s ease;
+    border: 2px solid var(--cor-secundaria);
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--cor-secundaria);
+}
+
+.cta-button-whatsapp {
+    display: inline-block;
+    background-color: #25D366;
+    color: var(--cor-branco);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.cta-button-whatsapp:hover {
+    transform: scale(1.05);
+}
+
+
+/* ---- SEÇÃO DE PRODUTOS ---- */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.product-card {
+    background-color: var(--cor-branco);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3,
+.product-card p {
+    padding: 0 20px;
+}
+
+.product-card h3 {
+    margin-top: 15px;
+}
+
+.product-card p {
+    padding-bottom: 20px;
+}
+
+
+/* ---- SEÇÃO SOBRE E CONTATO ---- */
+
+#sobre {
+    background-color: var(--cor-branco);
+}
+
+.contact-info {
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+
+/* ---- RODAPÉ (FOOTER) ---- */
+
+footer {
+    background-color: var(--cor-primaria);
+    /* Rodapé com a cor principal */
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* ---- REGRAS PARA CELULARES (Responsividade) ---- */
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    #hero .slogan {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
