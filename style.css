@@ -1,4 +1,4 @@
-/* ---- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS ---- */
+/* ---- VERSÃO FINAL - APENAS MODO CLARO ---- */
 
 :root {
     --cor-primaria: #0D6A35;
@@ -19,7 +19,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* Efeito de rolagem suave ao clicar nos links do menu */
 }
 
 body {
@@ -34,9 +33,6 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
-
-/* ---- CABEÇALHO (HEADER) ---- */
 
 header {
     background-color: var(--cor-branco);
@@ -76,12 +72,8 @@ header nav a:hover {
     color: var(--cor-primaria);
 }
 
-
-/* ---- SEÇÕES PRINCIPAIS ---- */
-
 section {
     padding: 60px 20px;
-    /* Adicionado padding lateral para segurança */
     text-align: center;
 }
 
@@ -99,9 +91,6 @@ h3 {
     color: var(--cor-primaria);
 }
 
-
-/* ---- SEÇÃO HERO (PRINCIPAL) ---- */
-
 #hero {
     background-color: #f7f3e5;
 }
@@ -118,9 +107,6 @@ h3 {
     font-size: 1.2rem;
     margin-bottom: 30px;
 }
-
-
-/* ---- BOTÕES (Call to Action) ---- */
 
 .cta-button {
     display: inline-block;
@@ -158,12 +144,8 @@ h3 {
     transform: scale(1.05);
 }
 
-
-/* ---- SEÇÃO DE PRODUTOS ---- */
-
 .product-grid {
     display: grid;
-    /* No computador, as colunas se ajustam automaticamente */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
@@ -203,9 +185,6 @@ h3 {
     padding-bottom: 20px;
 }
 
-
-/* ---- SEÇÃO SOBRE E CONTATO ---- */
-
 #sobre {
     background-color: var(--cor-branco);
 }
@@ -215,9 +194,6 @@ h3 {
     font-size: 1.1rem;
 }
 
-
-/* ---- RODAPÉ (FOOTER) ---- */
-
 footer {
     background-color: var(--cor-primaria);
     color: var(--cor-branco);
@@ -225,92 +201,29 @@ footer {
     padding: 20px 0;
 }
 
-
-/**************************************************/
-
-
-/* ---- REGRAS PARA CELULARES (Responsividade) ---- */
-
-
-/* Estas regras SÓ SÃO APLICADAS em telas com largura máxima de 768px */
-
-
-/**************************************************/
-
 @media (max-width: 768px) {
-    /* Ajusta o cabeçalho para o formato de coluna */
     header .container {
         flex-direction: column;
         gap: 15px;
     }
-    /* Centraliza os links do menu para melhor visualização */
     header nav ul {
         justify-content: center;
         padding: 0;
-        /* Remove padding que pode existir */
     }
-    /* Reduz o tamanho das fontes de títulos para caberem melhor na tela */
     h2 {
         font-size: 2rem;
     }
     #hero .slogan {
         font-size: 2.8rem;
         line-height: 1.2;
-        /* Melhora a leitura em caso de quebra de linha */
     }
     #hero p {
         font-size: 1rem;
     }
-    /* Força a grade de produtos a ter apenas UMA coluna */
     .product-grid {
         grid-template-columns: 1fr;
-        /* Esta é a regra chave! */
     }
-    /* Reduz o padding das seções para dar mais espaço ao conteúdo */
     section {
         padding: 40px 20px;
-    }
-    /************************************************************/
-    /* ---- REGRAS PARA O MODO ESCURO (DARK MODE) ---- */
-    /* Este bloco SÓ é aplicado se o celular/sistema estiver em Modo Escuro */
-    /************************************************************/
-    @media (prefers-color-scheme: dark) {
-        /* Primeiro, definimos as variáveis de cores para o modo escuro */
-         :root {
-            --cor-primaria: #A5D6A7;
-            /* O verde escuro vira um verde claro para leitura */
-            --cor-secundaria: #FDB813;
-            /* O amarelo continua vibrante e ótimo para destaque */
-            --cor-fundo: #121212;
-            /* Um fundo preto/cinza escuro, mais suave que o preto puro */
-            --cor-texto: #E0E0E0;
-            /* O texto preto vira um cinza claro */
-            --cor-branco: #222222;
-            /* O branco (de cards/header) vira um cinza um pouco mais claro */
-        }
-        /* O logo pode ter um fundo branco que fica feio no modo escuro. */
-        /* Esta regra pode ajudar a suavizar isso, mas o ideal é um logo com fundo transparente (PNG) */
-        .logo-img {
-            background-color: white;
-            /* Força um fundo branco limpo para o logo JPG */
-            padding: 5px;
-            border-radius: 8px;
-        }
-        /* Invertemos a cor do botão principal para ter bom contraste no fundo escuro */
-        .cta-button {
-            background-color: var(--cor-secundaria);
-            color: #121212;
-            /* Texto bem escuro no botão amarelo */
-            border-color: var(--cor-secundaria);
-        }
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--cor-secundaria);
-        }
-        /* O rodapé agora usa a cor de "fundo" do modo escuro */
-        footer {
-            background-color: var(--cor-branco);
-            color: var(--cor-texto);
-        }
     }
 }
