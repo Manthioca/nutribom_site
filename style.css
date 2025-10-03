@@ -1,20 +1,13 @@
 /* ---- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS ---- */
 
-
-/* Variáveis de cores e fontes ATUALIZADAS com a identidade da NUTRIBOM */
-
 :root {
     --cor-primaria: #0D6A35;
-    /* Verde escuro do logo */
     --cor-secundaria: #FDB813;
-    /* Amarelo/dourado do logo */
     --cor-fundo: #F8F9FA;
     --cor-texto: #333;
     --cor-branco: #FFFFFF;
     --fonte-titulo: 'Nunito', sans-serif;
-    /* Fonte arredondada e forte */
     --fonte-slogan: 'Pacifico', cursive;
-    /* Fonte script para o slogan */
     --fonte-corpo: 'Nunito', sans-serif;
 }
 
@@ -22,6 +15,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Efeito de rolagem suave ao clicar nos links do menu */
 }
 
 body {
@@ -43,9 +41,7 @@ body {
 header {
     background-color: var(--cor-branco);
     padding: 0.5rem 0;
-    /* Diminuí um pouco a altura */
     border-bottom: 3px solid var(--cor-secundaria);
-    /* Borda com a cor secundária */
     position: sticky;
     top: 0;
     z-index: 10;
@@ -57,12 +53,8 @@ header .container {
     align-items: center;
 }
 
-
-/* Estilo para a imagem do logo */
-
 .logo-img {
     max-height: 150px;
-    /* Ajuste a altura do seu logo aqui */
     width: auto;
 }
 
@@ -88,14 +80,14 @@ header nav a:hover {
 /* ---- SEÇÕES PRINCIPAIS ---- */
 
 section {
-    padding: 60px 0;
+    padding: 60px 20px;
+    /* Adicionado padding lateral para segurança */
     text-align: center;
 }
 
 h2 {
     font-family: var(--fonte-titulo);
     font-weight: 800;
-    /* Mais peso para os títulos */
     font-size: 2.5rem;
     color: var(--cor-primaria);
     margin-bottom: 20px;
@@ -112,17 +104,12 @@ h3 {
 
 #hero {
     background-color: #f7f3e5;
-    /* Um fundo creme que combina com o amarelo */
 }
-
-
-/* Estilo especial para o slogan */
 
 #hero .slogan {
     font-family: var(--fonte-slogan);
     font-size: 3.8rem;
     font-weight: 400;
-    /* Fontes script não precisam de negrito */
     color: var(--cor-primaria);
     margin-bottom: 10px;
 }
@@ -138,9 +125,7 @@ h3 {
 .cta-button {
     display: inline-block;
     background-color: var(--cor-secundaria);
-    /* Botão principal com a cor secundária */
     color: var(--cor-texto);
-    /* Texto escuro para contraste no amarelo */
     padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
@@ -178,6 +163,7 @@ h3 {
 
 .product-grid {
     display: grid;
+    /* No computador, as colunas se ajustam automaticamente */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
@@ -234,24 +220,54 @@ h3 {
 
 footer {
     background-color: var(--cor-primaria);
-    /* Rodapé com a cor principal */
     color: var(--cor-branco);
     text-align: center;
     padding: 20px 0;
 }
 
 
+/**************************************************/
+
+
 /* ---- REGRAS PARA CELULARES (Responsividade) ---- */
 
+
+/* Estas regras SÓ SÃO APLICADAS em telas com largura máxima de 768px */
+
+
+/**************************************************/
+
 @media (max-width: 768px) {
+    /* Ajusta o cabeçalho para o formato de coluna */
     header .container {
         flex-direction: column;
         gap: 15px;
     }
-    #hero .slogan {
-        font-size: 2.8rem;
+    /* Centraliza os links do menu para melhor visualização */
+    header nav ul {
+        justify-content: center;
+        padding: 0;
+        /* Remove padding que pode existir */
     }
+    /* Reduz o tamanho das fontes de títulos para caberem melhor na tela */
     h2 {
         font-size: 2rem;
+    }
+    #hero .slogan {
+        font-size: 2.8rem;
+        line-height: 1.2;
+        /* Melhora a leitura em caso de quebra de linha */
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    /* Força a grade de produtos a ter apenas UMA coluna */
+    .product-grid {
+        grid-template-columns: 1fr;
+        /* Esta é a regra chave! */
+    }
+    /* Reduz o padding das seções para dar mais espaço ao conteúdo */
+    section {
+        padding: 40px 20px;
     }
 }
