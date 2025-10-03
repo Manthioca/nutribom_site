@@ -270,4 +270,47 @@ footer {
     section {
         padding: 40px 20px;
     }
+    /************************************************************/
+    /* ---- REGRAS PARA O MODO ESCURO (DARK MODE) ---- */
+    /* Este bloco SÓ é aplicado se o celular/sistema estiver em Modo Escuro */
+    /************************************************************/
+    @media (prefers-color-scheme: dark) {
+        /* Primeiro, definimos as variáveis de cores para o modo escuro */
+         :root {
+            --cor-primaria: #A5D6A7;
+            /* O verde escuro vira um verde claro para leitura */
+            --cor-secundaria: #FDB813;
+            /* O amarelo continua vibrante e ótimo para destaque */
+            --cor-fundo: #121212;
+            /* Um fundo preto/cinza escuro, mais suave que o preto puro */
+            --cor-texto: #E0E0E0;
+            /* O texto preto vira um cinza claro */
+            --cor-branco: #222222;
+            /* O branco (de cards/header) vira um cinza um pouco mais claro */
+        }
+        /* O logo pode ter um fundo branco que fica feio no modo escuro. */
+        /* Esta regra pode ajudar a suavizar isso, mas o ideal é um logo com fundo transparente (PNG) */
+        .logo-img {
+            background-color: white;
+            /* Força um fundo branco limpo para o logo JPG */
+            padding: 5px;
+            border-radius: 8px;
+        }
+        /* Invertemos a cor do botão principal para ter bom contraste no fundo escuro */
+        .cta-button {
+            background-color: var(--cor-secundaria);
+            color: #121212;
+            /* Texto bem escuro no botão amarelo */
+            border-color: var(--cor-secundaria);
+        }
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--cor-secundaria);
+        }
+        /* O rodapé agora usa a cor de "fundo" do modo escuro */
+        footer {
+            background-color: var(--cor-branco);
+            color: var(--cor-texto);
+        }
+    }
 }
